@@ -1,0 +1,36 @@
+# This file may be used to create an environment using:
+# $ conda create --name <env> --file <this file>
+# platform: win-64
+blas=1.0=mkl
+certifi=2018.11.29=py37_1000
+django=2.1.2=py37_0
+django-cors-headers=2.4.0=py_0
+django-crispy-forms=1.7.0=py_1
+django-filter=2.0.0=py_0
+djangorestframework=3.9.0=py_0
+freetype=2.9.1=ha9979f8_1
+icc_rt=2017.0.4=h97af966_0
+intel-openmp=2019.0=118
+jinja2=2.10=py_1
+jpeg=9b=hb83a4c4_2
+libpng=1.6.35=h2a8f88b_0
+libtiff=4.0.9=h36446d0_2
+markdown=3.0.1=py37_0
+markupsafe=1.0=py37hfa6e2cd_1
+mkl=2019.0=118
+mkl_fft=1.0.6=py37hdbbee80_0
+mkl_random=1.0.1=py37h77b88f5_1
+numpy=1.15.4=py37ha559c80_0
+numpy-base=1.15.4=py37h8128ebf_0
+olefile=0.46=py_0
+pillow=5.3.0=py37hdc69c19_0
+pip=18.1=py37_0
+python=3.7.1=h33f27b4_4
+pytz=2018.7=py37_0
+setuptools=40.5.0=py37_0
+tk=8.6.8=hfa6e2cd_0
+vc=14.1=h21ff451_3
+vs2015_runtime=15.5.2=3
+wheel=0.32.2=py37_0
+wincertstore=0.2=py37_0
+zlib=1.2.11=h8395fce_2
