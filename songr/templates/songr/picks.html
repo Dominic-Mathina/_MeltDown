@@ -1,0 +1,15 @@
+{% extends 'songr/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <h2 class="mb-3">Update your interests</h2>
+  <form method="post" novalidate>
+    {% csrf_token %}
+    {{ form|crispy }}
+    {% for field in interests %}
+        <li>field</li>
+    {% endfor %}
+    <button type="submit" class="btn btn-success">Save changes</button>
+  </form>
+{% endblock %}

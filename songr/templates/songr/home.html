@@ -1,0 +1,113 @@
+{% extends "songr/base.html "%}
+{% block content %}
+<!-- 	{% for song in songs %}
+		<article class="media content-section">
+		  <div class="media-body">
+		    <div class="article-metadata">
+		      <a class="mr-2" href="#">{{ song.dejay }}</a>
+		      <small class="text-muted">{{ song.date_posted.date }}</small>
+		    </div>
+		
+		    <p class="article-content"><a href="{% url 'pdetail' song.id %}">
+		    		<div class = 'video-container'>
+							<video height="50%" width="50%" controls="" >
+								<source src="{{ song.song_file.url }}" type="video/mp4">	
+							</video>
+							<p>{{ song.song_file.name }}</p>
+					</div>	
+	
+		    </a></p>
+		  </div>
+		</article>
+	{% endfor %} -->
+
+	{% regroup songs by dejay as song_list %}
+
+
+		<ul class="list-group">
+		{% for song in song_list %}
+		<article class="media content-section">
+		<div class="media-body">
+			<!-- <div class="article-metadata"> -->
+		      <a class="mr-2" href="{% url 'dj-profile' %}">{{ song.grouper }}  {{ song.date_posted.date }}</a>
+		      
+		    <!-- </div> -->
+			<ul class="list-group">
+				{% for songn in song.list %}
+					<!-- <small class="text-muted">{{ songn.date_posted.date }}</small> -->
+					<a href="{% url 'pdetail' songn.id %}"><li class="list-group-item d-flex justify-content-start">
+						<div class = 'video-container'>
+							<video height="200px" width="250px" controls="" >
+								<source src="{{ songn.song_file.url }}" type="video/mp4">	
+							</video>
+							<p>{{ songn.song_file }}</p>
+							<p>{{ playlistupload.save_m2m }}</p>
+							<!-- <input type="checkbox" name="interest" value="{{ songn.id }}"> -->
+						</div>	
+						<!-- <button type="button" class="btn btn-primary d-flex justify-content-center">Pick</button>	 -->
+					</li></a>
+				{% endfor %}
+			</ul>
+		</div>
+		</article>
+		{% endfor %}
+		</ul>
+		
+
+<style type="text/css">
+	.btn{
+		height: 40px;
+		width: 70px;
+		align-content: right;
+	}
+</style>
+<!-- 	<ul class="list-group">
+		{%  for song in songs %}
+		{% if song.dejay == Sandro %}
+			<li class="list-group-item d-flex justify-content-center0">
+		    		<div class = 'video-container'>
+							<video height="50%" width="50%" controls="" >
+								<source src="{{ song.song_file.url }}" type="video/mp4">	
+							</video>
+							
+					</div>
+					<span>{{ song.song_file.name }}</span>
+	
+		    </li>
+		{% endif %}
+		{% endfor %}
+	</ul> -->
+<!-- 	<div class="card">
+		<table class=" table mb-0">
+				
+			<thead>
+				<th> {{ playlistupload.dejay }} </th>
+				<th> </th>
+			</thead>
+			<tbody>
+				{% for song in songs %}
+				{% if song.dejay == Sandro %}
+				<tr>
+					<td class="align-middle">
+						<div class = 'video-container'>
+							<video height="100%" width="100%" controls="" >
+								<source src="{{ song.song_file.url }}" type="video/mp4">	
+							</video>
+							
+					    </div>
+					</td>
+					<td class="align-middle">{{ song.song_file.name }}</td>
+				</tr>
+				{% endif %}
+				{% endfor %}
+				
+			</tbody>
+			
+		</table>
+		
+	</div> -->
+
+{% endblock %}
+
+
+

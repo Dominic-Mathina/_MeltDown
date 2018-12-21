@@ -1,0 +1,21 @@
+{% extends "songr/base.html "%}
+{% block content %}
+	
+		<article class="media content-section">
+		  <div class="media-body">
+		    <div class="article-metadata">
+		      <a class="mr-2" href="#">{{ object.dejay }}</a>
+		      <small class="text-muted">{{ object.date_posted }}</small>
+		    </div>
+		    <p class="article-content">
+		    		<div class = 'video-container'>
+							<video height="80%" width="80%" controls="" >
+								<source src="{{ object.song_file.url }}" type="video/mp4">	
+							</video>
+							<p>{{ object.song_file }}</p>
+						</div>		
+		    </p>
+		  </div>
+		</article>
+
+{% endblock content %}
